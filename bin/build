@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -x
+set -e
+set -u
+
+go build -o pkg/gobot $(find src/  -name '*.go')
