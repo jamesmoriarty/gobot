@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+set -x
+set -e
+set -u
+
+go test $(find src/  -name '*_test.go')

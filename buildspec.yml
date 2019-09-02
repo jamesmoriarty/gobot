@@ -7,4 +7,5 @@ phases:
   build:
     commands:
       - bin/build
+      - bin/test
 
