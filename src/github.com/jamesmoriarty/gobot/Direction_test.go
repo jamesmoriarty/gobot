@@ -12,7 +12,7 @@ func TestNorthDirectionToString(t *testing.T) {
 	}
 }
 
-func TestNorthStringToDirection(t *testing.T) {
+func TestStringToDirectionNorth(t *testing.T) {
 	got, _ := StringToDirection("North")
 
 	if *got != North {
@@ -20,7 +20,7 @@ func TestNorthStringToDirection(t *testing.T) {
 	}
 }
 
-func TestEastStringToDirection(t *testing.T) {
+func TestStringToDirectionEast(t *testing.T) {
 	got, _ := StringToDirection("East")
 
 	if *got != East {
@@ -28,7 +28,7 @@ func TestEastStringToDirection(t *testing.T) {
 	}
 }
 
-func TestSouthStringToDirection(t *testing.T) {
+func TestStringToDirectionSouth(t *testing.T) {
 	got, _ := StringToDirection("South")
 
 	if *got != South {
@@ -36,7 +36,7 @@ func TestSouthStringToDirection(t *testing.T) {
 	}
 }
 
-func TestWestStringToDirection(t *testing.T) {
+func TestStringToDirectionWest(t *testing.T) {
 	got, _ := StringToDirection("West")
 
 	if *got != West {
@@ -44,7 +44,7 @@ func TestWestStringToDirection(t *testing.T) {
 	}
 }
 
-func TestErrorStringToDirection(t *testing.T) {
+func TestStringToDirectionError(t *testing.T) {
 	got, err := StringToDirection("zoo")
 
 	if got != nil {
