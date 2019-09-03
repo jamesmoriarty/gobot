@@ -4,4 +4,4 @@ set -x
 set -e
 set -u
 
-go test $(find src/  -name '*_test.go')
+go test -v $(find src/  -name '*.go')
