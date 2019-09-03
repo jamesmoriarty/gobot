@@ -2,21 +2,11 @@ package main
 
 import (
 	"bufio"
-	"errors"
 	"fmt"
 	"os"
 	"regexp"
 	"strings"
 )
-
-func Execute(tokens []string, robot *Robot) (*Robot, error) {
-	switch tokens[0] {
-	case "place":
-		return CommandPlace(tokens)
-	default:
-		return nil, errors.New("invalid command")
-	}
-}
 
 func main() {
 	reader := bufio.NewReader(os.Stdin)
