@@ -4,6 +4,14 @@ import (
 	"testing"
 )
 
+func TestNorthDirectionToString(t *testing.T) {
+	got := North.String()
+
+	if got != "North" {
+		t.Errorf("*%v != North", got)
+	}
+}
+
 func TestNorthStringToDirection(t *testing.T) {
 	got, _ := StringToDirection("North")
 
@@ -33,5 +41,17 @@ func TestWestStringToDirection(t *testing.T) {
 
 	if *got != West {
 		t.Errorf("*%v != West", got)
+	}
+}
+
+func TestErrorStringToDirection(t *testing.T) {
+	got, err := StringToDirection("zoo")
+
+	if got != nil {
+		t.Errorf("*%v != nil", got)
+	}
+
+	if err.Error() != "invalid direction" {
+		t.Errorf("*%v != err", err)
 	}
 }
