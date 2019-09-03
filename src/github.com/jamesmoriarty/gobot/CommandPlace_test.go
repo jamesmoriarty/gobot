@@ -7,6 +7,10 @@ func TestCommandPlace(t *testing.T) {
 	got, err := CommandPlace(tokens)
 
 	if err != nil {
+		t.Errorf("*%v != nil", err)
+	}
+
+	if got == nil {
 		t.Errorf("*%v != nil", got)
 	}
 }
