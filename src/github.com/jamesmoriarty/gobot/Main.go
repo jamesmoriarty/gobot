@@ -6,24 +6,13 @@ import (
 	"fmt"
 	"os"
 	"regexp"
-	"strconv"
 	"strings"
 )
 
-func place(tokens []string) (*Robot, error) {
-	x, _ := strconv.ParseInt(tokens[1], 0, 32)
-	y, _ := strconv.ParseInt(tokens[2], 0, 32)
-	direction, err := StringToDirection(tokens[3])
-	if err != nil {
-		return nil, errors.New("invalid direction")
-	}
-	return &Robot{x, y, *direction}, nil
-}
-
-func execute(tokens []string, robot *Robot) (*Robot, error) {
+func Execute(tokens []string, robot *Robot) (*Robot, error) {
 	switch tokens[0] {
 	case "place":
-		return place(tokens)
+		return CommandPlace(tokens)
 	default:
 		return nil, errors.New("invalid command")
 	}
@@ -34,8 +23,10 @@ func main() {
 
 	tokenizer := regexp.MustCompile(`(,| )+`)
 
-	var robot *Robot
-	var err error
+	var (
+		robot *Robot
+		err   error
+	)
 
 	for {
 		fmt.Print("> ")
@@ -44,7 +35,7 @@ func main() {
 
 		tokens := tokenizer.Split(strings.TrimRight(text, "\r\n"), -1)
 
-		robot, err = execute(tokens, robot)
+		robot, err = Execute(tokens, robot)
 
 		fmt.Printf("%v, %q\n", robot, err)
 	}
