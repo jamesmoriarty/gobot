@@ -37,6 +37,6 @@ func main() {
 
 		robot, err = Execute(tokens, robot)
 
-		fmt.Printf("%v, %q\n", robot, err)
+		fmt.Printf("%v, %v\n", robot, err)
 	}
 }
