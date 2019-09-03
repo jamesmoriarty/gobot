@@ -25,7 +25,6 @@ func main() {
 
 	var (
 		robot *Robot
-		err   error
 	)
 
 	for {
@@ -35,7 +34,11 @@ func main() {
 
 		tokens := tokenizer.Split(strings.TrimRight(text, "\r\n"), -1)
 
-		robot, err = Execute(tokens, robot)
+		newRobot, err := Execute(tokens, robot)
+
+		if newRobot != nil {
+			robot = newRobot
+		}
 
 		fmt.Printf("%v, %v\n", robot, err)
 	}
