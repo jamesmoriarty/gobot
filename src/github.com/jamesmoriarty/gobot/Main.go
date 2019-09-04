@@ -24,7 +24,7 @@ func main() {
 		if newRobot != nil {
 			robot = newRobot
 
-			fmt.Printf("%v\n", robot)
+			fmt.Printf("%v %v %v\n", robot.x, robot.y, robot.direction.String())
 		} else {
 			fmt.Printf("%v\n", err)
 		}

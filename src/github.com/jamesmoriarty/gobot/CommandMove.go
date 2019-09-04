@@ -23,6 +23,4 @@ func CommandMove(tokens []string, robot *Robot) (*Robot, error) {
 	default:
 		return nil, errors.New("robot not placed")
 	}
-
-	return nil, nil
 }
