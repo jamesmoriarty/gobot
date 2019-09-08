@@ -6,10 +6,13 @@ import (
 	"os"
 	"regexp"
 	"strings"
+
+	"../commands"
+	"../robots"
 )
 
 func main() {
-	var robot *Robot
+	var robot *robots.Robot
 
 	reader := bufio.NewReader(os.Stdin)
 	tokenizer := regexp.MustCompile(`(,| )+`)
@@ -19,12 +22,12 @@ func main() {
 
 		text, _ := reader.ReadString('\n')
 		tokens := tokenizer.Split(strings.TrimRight(text, "\r\n"), -1)
-		newRobot, err := Execute(tokens, robot)
+		newRobot, err := commands.Execute(tokens, robot)
 
 		if newRobot != nil {
 			robot = newRobot
 
-			fmt.Printf("%v %v %v\n", robot.x, robot.y, robot.direction.String())
+			fmt.Printf("%v %v %v\n", robot.X, robot.Y, robot.Direction.String())
 		} else {
 			fmt.Printf("%v\n", err)
 		}

@@ -1,8 +1,12 @@
-package main
+package commands
 
-import "errors"
+import (
+	"errors"
 
-func Execute(tokens []string, robot *Robot) (*Robot, error) {
+	"../robots"
+)
+
+func Execute(tokens []string, robot *robots.Robot) (*robots.Robot, error) {
 	switch tokens[0] {
 	case "place":
 		return CommandPlace(tokens)

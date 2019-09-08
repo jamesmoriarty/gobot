@@ -4,4 +4,4 @@ set -x
 set -e
 set -u
 
-go build -o bin/gobot $(find .  -name '*.go')
+go build -i -o bin/gobot cli/*

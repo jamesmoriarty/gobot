@@ -4,4 +4,9 @@ set -x
 set -e
 set -u
 
-go test -v --cover $(find src/  -name '*.go')
+for d in */ ; do
+  if [[ "$d" != "bin/" ]]; then
+    go test -v --cover $(find $d/  -name '*.go')
+  fi
+done
+

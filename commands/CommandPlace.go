@@ -1,11 +1,14 @@
-package main
+package commands
 
 import (
 	"errors"
 	"strconv"
+
+	"../directions"
+	"../robots"
 )
 
-func CommandPlace(tokens []string) (*Robot, error) {
+func CommandPlace(tokens []string) (*robots.Robot, error) {
 	x, err := strconv.ParseInt(tokens[1], 0, 64)
 
 	if err != nil {
@@ -18,11 +21,11 @@ func CommandPlace(tokens []string) (*Robot, error) {
 		return nil, errors.New("invalid y")
 	}
 
-	direction, err := StringToDirection(tokens[3])
+	direction, err := directions.StringToDirection(tokens[3])
 
 	if err != nil {
 		return nil, errors.New("invalid direction")
 	}
 
-	return &Robot{x, y, *direction}, nil
+	return &robots.Robot{x, y, *direction}, nil
 }

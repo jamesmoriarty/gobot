@@ -1,15 +1,18 @@
-package main
+package commands
 
 import (
 	"reflect"
 	"testing"
+
+	"../directions"
+	"../robots"
 )
 
 func TestExecuteCommandPlace(t *testing.T) {
 	tokens := []string{"place", "1", "1", "West"}
 	got, err := Execute(tokens, nil)
 
-	if !reflect.DeepEqual(*got, Robot{1, 1, West}) {
+	if !reflect.DeepEqual(*got, robots.Robot{1, 1, directions.West}) {
 		t.Errorf("*%v != ", got)
 	}
 
