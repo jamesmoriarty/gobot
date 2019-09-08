@@ -11,11 +11,20 @@ import (
 	"../robots"
 )
 
+const HELP = `
+COMMANDS:
+
+  - PLACE X<-N..N> Y<-N..N> Direction<North|East|South|West>
+  - MOVE
+`
+
 func main() {
 	var robot *robots.Robot
 
 	reader := bufio.NewReader(os.Stdin)
 	tokenizer := regexp.MustCompile(`(,| )+`)
+
+	fmt.Println(HELP)
 
 	for {
 		fmt.Print("> ")
