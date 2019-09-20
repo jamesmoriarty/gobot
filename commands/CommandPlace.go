@@ -9,6 +9,10 @@ import (
 )
 
 func CommandPlace(tokens []string) (*robots.Robot, error) {
+	if len(tokens) != 4 {
+		return nil, errors.New("invalid number of command arguments")
+	}
+
 	x, err := strconv.ParseInt(tokens[1], 0, 64)
 
 	if err != nil {

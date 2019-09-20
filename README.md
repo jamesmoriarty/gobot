@@ -2,6 +2,30 @@
 
 [![Build Badge][1]][2]
 
+## Usage
+
+```
+$ bin/gobot
+
+Commands:
+
+  - Place X<Number> Y<Number> Direction<North|East|South|West>
+  - Move
+  - Left
+  - Right
+
+> Place
+invalid number of command arguments
+> Place 1,2,West
+1 2 West
+> Move
+0 2 West
+> Left
+command not implemented
+>
+```
+
+
 ## Build
 
 ```

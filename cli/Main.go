@@ -11,11 +11,12 @@ import (
 	"../robots"
 )
 
-const HELP = `
-COMMANDS:
+const HELP = `Commands:
 
-  - PLACE X<-N..N> Y<-N..N> Direction<North|East|South|West>
-  - MOVE
+  - Place X<Number> Y<Number> Direction<North|East|South|West>
+  - Move
+  - Left
+  - Right
 `
 
 func main() {

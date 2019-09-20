@@ -3,7 +3,7 @@ package commands
 import "testing"
 
 func TestCommandPlace(t *testing.T) {
-	tokens := []string{"place", "1", "2", "West"}
+	tokens := []string{"Place", "1", "2", "West"}
 	got, err := CommandPlace(tokens)
 
 	if err != nil {
@@ -16,7 +16,7 @@ func TestCommandPlace(t *testing.T) {
 }
 
 func TestCommandPlaceXError(t *testing.T) {
-	tokens := []string{"place", "zoo", "2", "West"}
+	tokens := []string{"Place", "zoo", "2", "West"}
 	got, err := CommandPlace(tokens)
 
 	if got != nil {
@@ -29,7 +29,7 @@ func TestCommandPlaceXError(t *testing.T) {
 }
 
 func TestCommandPlaceYError(t *testing.T) {
-	tokens := []string{"place", "1", "y", "West"}
+	tokens := []string{"Place", "1", "y", "West"}
 	got, err := CommandPlace(tokens)
 
 	if got != nil {
@@ -42,7 +42,7 @@ func TestCommandPlaceYError(t *testing.T) {
 }
 
 func TestCommandPlaceDirectionError(t *testing.T) {
-	tokens := []string{"place", "1", "1", "zoo"}
+	tokens := []string{"Place", "1", "1", "zoo"}
 	got, err := CommandPlace(tokens)
 
 	if got != nil {
