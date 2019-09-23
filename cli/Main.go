@@ -11,7 +11,8 @@ import (
 	"../robots"
 )
 
-const HELP = `Commands:
+const HELP = `
+Commands:
 
   - Place X<Number> Y<Number> Direction<North|East|South|West>
   - Move

@@ -26,3 +26,15 @@ func StringToDirection(s string) (direction *Direction, err error) {
 
 	return nil, errors.New("invalid direction")
 }
+
+func (d Direction) Rotate(i int) Direction {
+	directions := []Direction{North, East, South, West}
+
+	for index := 0; index <= len(directions); index++ {
+		if directions[index] == d {
+			return directions[ (((i % 4) + 4) + index) % 4]
+		}
+	}
+
+	return d
+}

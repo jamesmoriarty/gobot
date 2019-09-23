@@ -13,7 +13,7 @@ func Execute(tokens []string, robot *robots.Robot) (*robots.Robot, error) {
 	case "Move":
 		return CommandMove(tokens, robot)
 	case "Left":
-		return nil, errors.New("command not implemented")
+		return CommandLeft(tokens, robot)
 	case "Right":
 		return nil, errors.New("command not implemented")
 	default:

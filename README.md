@@ -21,6 +21,8 @@ invalid number of command arguments
 > Move
 0 2 West
 > Left
+0 2 South
+> Right
 command not implemented
 >
 ```
