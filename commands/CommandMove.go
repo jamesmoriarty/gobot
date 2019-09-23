@@ -8,24 +8,26 @@ import (
 )
 
 func CommandMove(tokens []string, robot *robots.Robot) (*robots.Robot, error) {
-	switch robot.Direction {
-	case directions.North:
-		newRobot := robots.Robot{robot.X, robot.Y + 1, robot.Direction}
-
-		return &newRobot, nil
-	case directions.East:
-		newRobot := robots.Robot{robot.X + 1, robot.Y, robot.Direction}
-
-		return &newRobot, nil
-	case directions.South:
-		newRobot := robots.Robot{robot.X, robot.Y - 1, robot.Direction}
-
-		return &newRobot, nil
-	case directions.West:
-		newRobot := robots.Robot{robot.X - 1, robot.Y, robot.Direction}
-
-		return &newRobot, nil
-	default:
+	if robot == nil {
 		return nil, errors.New("robot not placed")
+	}
+
+	x, y := getOffset(robot.Direction)
+
+	return &robots.Robot{robot.X + x, robot.Y + y, robot.Direction}, nil
+}
+
+func getOffset(d directions.Direction) (int64, int64) {
+	switch d {
+	case directions.North:
+		return 0, 1
+	case directions.East:
+		return 1, 0
+	case directions.South:
+		return 0, -1
+	case directions.West:
+		return -1, 0
+	default:
+		return 0, 0
 	}
 }

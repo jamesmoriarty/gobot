@@ -32,7 +32,7 @@ func (d Direction) Rotate(i int) Direction {
 
 	for index := 0; index <= len(directions); index++ {
 		if directions[index] == d {
-			return directions[ (((i % 4) + 4) + index) % 4]
+			return directions[(((i%4)+4)+index)%4]
 		}
 	}
 
