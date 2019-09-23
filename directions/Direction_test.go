@@ -55,3 +55,19 @@ func TestStringToDirectionError(t *testing.T) {
 		t.Errorf("*%v != err", err)
 	}
 }
+
+func TestRotateForward(t *testing.T) {
+	got := West.Rotate(1)
+
+	if got != North {
+		t.Errorf("*%v != nil", got)
+	}
+}
+
+func TestRotateBackward(t *testing.T) {
+	got := West.Rotate(-1)
+
+	if got != South {
+		t.Errorf("*%v != nil", got)
+	}
+}
