@@ -4,4 +4,6 @@ set -x
 set -e
 set -u
 
+go version
+
 go build -i -o bin/gobot cli/*
