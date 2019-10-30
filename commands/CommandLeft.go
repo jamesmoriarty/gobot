@@ -3,7 +3,7 @@ package commands
 import (
 	"errors"
 
-	"../robots"
+	"github.com/jamesmoriarty/gobot/robots"
 )
 
 func CommandLeft(tokens []string, robot *robots.Robot) (*robots.Robot, error) {

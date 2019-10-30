@@ -1,6 +1,6 @@
 package robots
 
-import "../directions"
+import "github.com/jamesmoriarty/gobot/directions"
 
 type Robot struct {
 	X         int64

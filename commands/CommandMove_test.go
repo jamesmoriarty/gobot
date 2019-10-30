@@ -4,8 +4,8 @@ import (
 	"reflect"
 	"testing"
 
-	"../directions"
-	"../robots"
+	"github.com/jamesmoriarty/gobot/directions"
+	"github.com/jamesmoriarty/gobot/robots"
 )
 
 func TestCommandMove(t *testing.T) {

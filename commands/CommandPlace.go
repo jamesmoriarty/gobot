@@ -4,8 +4,8 @@ import (
 	"errors"
 	"strconv"
 
-	"../directions"
-	"../robots"
+	"github.com/jamesmoriarty/gobot/directions"
+	"github.com/jamesmoriarty/gobot/robots"
 )
 
 func CommandPlace(tokens []string) (*robots.Robot, error) {

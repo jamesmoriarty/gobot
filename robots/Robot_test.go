@@ -3,7 +3,7 @@ package robots
 import (
 	"testing"
 
-	"../directions"
+	"github.com/jamesmoriarty/gobot/directions"
 )
 
 func TestRobotX(t *testing.T) {

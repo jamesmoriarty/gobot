@@ -6,4 +6,4 @@ set -u
 
 go version
 
-GO_PATH=./src/cli go build -i -o bin/gobot cli/*
+go build -i -o bin/gobot ./cli

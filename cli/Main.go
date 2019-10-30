@@ -7,8 +7,8 @@ import (
 	"regexp"
 	"strings"
 
-	"../commands"
-	"../robots"
+	"github.com/jamesmoriarty/gobot/commands"
+	"github.com/jamesmoriarty/gobot/robots"
 )
 
 const HELP = `
