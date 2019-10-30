@@ -12,7 +12,7 @@ const (
 )
 
 func (d Direction) String() string {
-	return [...]string{"North", "East", "South", "West"}[d];
+	return [...]string{"North", "East", "South", "West"}[d]
 }
 
 func StringToDirection(s string) (direction *Direction, err error) {
