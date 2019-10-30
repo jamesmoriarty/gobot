@@ -3,8 +3,8 @@ package commands
 import (
 	"errors"
 
-	"../directions"
-	"../robots"
+	"github.com/jamesmoriarty/gobot/directions"
+	"github.com/jamesmoriarty/gobot/robots"
 )
 
 func CommandMove(tokens []string, robot *robots.Robot) (*robots.Robot, error) {
