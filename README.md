@@ -2,7 +2,16 @@
 
 [![Build Badge][1]][2] [![Go Report Badge][3]][4]
 
-## Usage
+## Install
+
+```
+go get -v github.com/jamesmoriarty/gobot/cli
+go install github.com/jamesmoriarty/gobot/cli
+```
+
+## Development
+
+### Usage
 
 ```
 $ bin/gobot
@@ -27,20 +36,19 @@ command not implemented
 >
 ```
 
-
-## Build
+### Build
 
 ```
 bin/build
 ```
 
-## Test
+### Test
 
 ```
 bin/test
 ```
 
-## Run
+### Run
 
 ```
 bin/gobot
